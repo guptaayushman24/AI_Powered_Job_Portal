@@ -1,6 +1,14 @@
 import { React } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Landing_Page.css'
 function Landing_Page() {
+    const navigate = useNavigate();
+    function loginpage(){
+        navigate('/signin');
+    }
+    function signuppage(){
+        navigate('/signup');
+    }
     return (
         <>
             <div className='Parentdiv'>
@@ -11,10 +19,10 @@ function Landing_Page() {
                     
                     <div className='subheader'>
                     <div className='websitename'>
-                        <button>LogIN</button>
+                        <button onClick={loginpage}>LogIN</button>
                     </div>
                     <div className='websitename'>
-                       <button>Register</button>
+                       <button onClick={signuppage}>Register</button>
                     </div>
                     </div>
                 </div>
