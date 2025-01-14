@@ -6,6 +6,7 @@ import Login from '../src/components/Login'
 import Reset_Password from './components/Reset_Password'
 import Signup from './components/Signup'
 import Profile_Page from './components/Profile_Page'
+import AllJobs from './components/All_Jobs'
 import './App.css'
 import {BrowserRouter, Routes,Route} from "react-router-dom"
 function App() {
@@ -13,14 +14,15 @@ function App() {
 
   return (
     <>
+   
     <BrowserRouter>
-    
     <Routes>
-    <Route path='/' element={<Landing_Page></Landing_Page>}></Route>
+    {/* <Route path='/' element={<Landing_Page></Landing_Page>}></Route>
     <Route path='/signin' element={<Login></Login>}></Route>
     <Route path='/resetpassword' element={<Reset_Password></Reset_Password>}></Route>
     <Route path='/signup' element={<Signup></Signup>}></Route>
-    <Route path='/profile' element={<Profile_Page></Profile_Page>}></Route>
+    <Route path='/profile' element={<Profile_Page></Profile_Page>}></Route> */}
+    <Route path='/alljobs' element={<AllJobs></AllJobs>}></Route>
     
     </Routes>
 
