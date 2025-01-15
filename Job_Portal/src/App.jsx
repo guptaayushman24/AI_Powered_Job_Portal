@@ -17,11 +17,11 @@ function App() {
    
     <BrowserRouter>
     <Routes>
-    {/* <Route path='/' element={<Landing_Page></Landing_Page>}></Route>
+    <Route path='/' element={<Landing_Page></Landing_Page>}></Route>
     <Route path='/signin' element={<Login></Login>}></Route>
     <Route path='/resetpassword' element={<Reset_Password></Reset_Password>}></Route>
     <Route path='/signup' element={<Signup></Signup>}></Route>
-    <Route path='/profile' element={<Profile_Page></Profile_Page>}></Route> */}
+    <Route path='/profile' element={<Profile_Page></Profile_Page>}></Route>
     <Route path='/alljobs' element={<AllJobs></AllJobs>}></Route>
     
     </Routes>
