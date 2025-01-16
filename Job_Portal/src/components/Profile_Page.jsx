@@ -13,7 +13,7 @@ function Profile_Page() {
         // setskills.add(skills);
         skillsarray.add(skills);
         setskillsarray(skillsarray);
-        console.log(skillsarray);
+        console.log("The type is",typeof(skillsarray));
     }
     return (
         <>
@@ -22,7 +22,7 @@ function Profile_Page() {
                     Compete Your profile to proceed further
                 </div>
 
-                {/* First Cart*/}
+                {/* First Card*/}
                 <div className="pp-careerpreference">
                     <div className="pp-careerpreference-skill">
                         Add your skills
@@ -45,6 +45,14 @@ function Profile_Page() {
                             )
                         }
                     </div>
+                </div>
+                <div className="profile-page-emailaddress">
+                    Email Address
+                    <input placeholder="Enter your email address"></input>
+                </div>
+
+                <div className="profile-page-submitprofile">
+                    <button>Submit Profile</button>
                 </div>
             </div>
         </>

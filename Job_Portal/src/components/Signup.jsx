@@ -51,8 +51,8 @@ function Signup() {
 
     }
     async function validateandchceckforuser() {
-        // FirstName Warning
         let fnamecheck, lnamecheck, emailcheck, passwordcheck = false;
+        // FirstName Warning
         if (fname.length == 0) {
             displaynamewarning.current.style.display = 'block';
 
@@ -154,7 +154,26 @@ function Signup() {
 
         // If all user data is correct save into the mongodb
         // After saving the data in the mongodb move to the carrer page
-        navigate('/profile');
+        if (fnamecheck==true && lnamecheck==true && passwordcheck==true && emailcheck==true){
+           try{
+            await axios.post('http://localhost:5000/signup',{
+                FirstName:fname,
+                LastName:lname,
+                EmailAddress:email,
+                Password:password
+            })
+            navigate('/profile');
+           }
+           catch(err){
+            console.log(err);
+           }
+            
+        }
+        else{
+            alert("Please check all the input fields");
+        }
+
+        
         
 
     }

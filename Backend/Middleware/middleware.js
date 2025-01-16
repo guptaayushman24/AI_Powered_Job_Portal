@@ -60,7 +60,27 @@ function checkcredentialsignin(req,res,next){
     }
     next();
 }
+
+function checkprofilecredential(req,res,next){
+    if (!req.body.Email){
+        return res.json({
+            'msg':'Please enter the email address'
+        })
+    }
+    if (!emailregex.test(req.body.Email)){
+        return res.json({
+            'msg':'Enter the valid email address'
+        })
+    }
+    if (req.body.Skills.length==0){
+        return res.json({
+            'msg':'Atleast one skill is required'
+        })
+    }
+    next();
+}
 module.exports = {
     checkcredential,
-    checkcredentialsignin
+    checkcredentialsignin,
+    checkprofilecredential
 }
