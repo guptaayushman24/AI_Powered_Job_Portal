@@ -4,10 +4,8 @@ import './Login.css'
 
 // import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
-// import { useForm } from 'react-hook-form';
-// import { auth } from './Firebase';
-// import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { UserContext } from "../Context/Context";
 import { faBars, faXmark, faUser,faCalendar, faEye } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
@@ -17,6 +15,9 @@ function Login() {
     const invalidemail = useRef();
     const displaypasswordwarning = useRef();
     const invalidpassword = useRef();
+    // Context
+    const {setuseremail} = useContext(UserContext);
+    
 
     let emailcheck, passwordcheck = false;
     const navigate = useNavigate();
@@ -71,7 +72,20 @@ function Login() {
         }
 
         // Navigate to the page where there jobs are showing after verifying the user (DataBase)
+        try{
+            if (emailcheck==true && passwordcheck==true){
+                await axios.post('http://localhost:5000/signin',{
+                    EmailAddress:email,
+                    Password:password
+                })
+                setuseremail(email);
+                navigate('/alljobs');
 
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
     }
 
     // signup

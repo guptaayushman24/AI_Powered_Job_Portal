@@ -47,3 +47,12 @@
 .profile-page-submitprofile{
     margin-top: 2rem;
 }
+.pp-careerpreference-secondcard{
+    margin-top: 0.6rem;
+    margin-left: 2rem;
+}
+.pp-careerpreference-secondcard{
+    display: flex;
+    flex-direction: row;
+    gap:0.5rem
+}

@@ -7,6 +7,7 @@ import Reset_Password from './components/Reset_Password'
 import Signup from './components/Signup'
 import Profile_Page from './components/Profile_Page'
 import AllJobs from './components/All_Jobs'
+import UserProvider from './Context/Context'
 import './App.css'
 import {BrowserRouter, Routes,Route} from "react-router-dom"
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
    
+    <UserProvider>
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<Landing_Page></Landing_Page>}></Route>
@@ -31,6 +33,7 @@ function App() {
       
   
 </BrowserRouter>
+    </UserProvider>
 
     </>
   )
